@@ -13,10 +13,37 @@ int main(){
     scanf("%d",&num);
 
     /* Copy the values of num to a temporary variable */
-    originalNum=num
+    originalNum= num;
 
     sum=0;
 
     /* find sum of factorial of digits */
-    while(num)
+    while(num){
+
+        /* Get last digit of num */
+        lastDigit=num%10;
+
+        /* Find factorial of digits */
+        fact=1;
+        for ( i = 1; i <= lastDigit; i++)
+        {
+            fact=fact*i;
+        }
+
+        /* Add factorial to sum */
+        sum=sum+fact;
+
+        num=num/10;
+    }
+
+    /* Check stronge number condition*/
+    if (sum==originalNum)
+    {
+        printf("%d is stronge number.",originalNum);
+    }
+    else
+    {
+        printf("%d is not stronge number.",originalNum);
+    }
+    return 0;
 }
